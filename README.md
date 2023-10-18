@@ -1,1 +1,1 @@
-# ToBidDemo-Android-Beta
+# ToBidSDK-Android
