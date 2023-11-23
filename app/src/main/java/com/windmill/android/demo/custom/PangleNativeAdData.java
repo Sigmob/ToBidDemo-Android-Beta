@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-public class PangleNativeAdData implements WMNativeAdData {
+public class PangleNativeAdData extends WMNativeAdData {
 
     private TTFeedAd ttFeedAd;
     private NativeAdInteractionListener nativeAdListener;

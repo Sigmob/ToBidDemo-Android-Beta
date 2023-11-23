@@ -48,7 +48,9 @@ public class PangleCustomerProxy extends WMCustomAdapterProxy {
                     .build();
 
             //强烈建议在应用对应的Application#onCreate()方法中调用，避免出现content为null的异常
-            TTAdSdk.init(context, mTTAdConfig, new TTAdSdk.InitCallback() {
+            TTAdSdk.init(context, mTTAdConfig);
+
+            TTAdSdk.start(new TTAdSdk.Callback() {
                 @Override
                 public void success() {
                     Log.d(TAG, "success");
@@ -80,7 +82,7 @@ public class PangleCustomerProxy extends WMCustomAdapterProxy {
 
     @Override
     public int baseOnToBidCustomAdapterVersion() {
-        return WMConstants.TO_BID_CUSTOM_ADAPTER_VERSION_1;
+        return WMConstants.TO_BID_CUSTOM_ADAPTER_VERSION_2;
     }
 
     @Override

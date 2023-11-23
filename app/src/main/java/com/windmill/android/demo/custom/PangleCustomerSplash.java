@@ -196,7 +196,7 @@ public class PangleCustomerSplash extends WMCustomSplashAdapter implements TTAdN
     }
 
     @Override
-    public void onSplashLoadSuccess() {
+    public void onSplashLoadSuccess(CSJSplashAd csjSplashAd) {
         Log.d(TAG, "onSplashLoadSuccess");
     }
 

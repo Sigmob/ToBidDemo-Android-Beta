@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-public class PangleExpressAdData implements WMNativeAdData {
+public class PangleExpressAdData extends WMNativeAdData {
 
     private TTNativeExpressAd mNativeExpressAd;
     private Map<TTNativeExpressAd, TTAppDownloadListener> mTTAppDownloadListenerMap = new WeakHashMap<>();
@@ -101,7 +101,7 @@ public class PangleExpressAdData implements WMNativeAdData {
                     }
 
                     if (adAdapter != null) {
-                        adAdapter.callNativeAdShowError(new WMAdapterError(code, "tt onRenderFail:" + msg));
+                        adAdapter.callNativeAdShowError(nativeAdData, new WMAdapterError(code, "tt onRenderFail:" + msg));
                     }
                 }
 
