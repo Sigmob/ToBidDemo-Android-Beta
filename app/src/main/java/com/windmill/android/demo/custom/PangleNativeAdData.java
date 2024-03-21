@@ -24,6 +24,7 @@ import com.windmill.sdk.WMConstants;
 import com.windmill.sdk.WindMillError;
 import com.windmill.sdk.base.WMLogUtil;
 import com.windmill.sdk.custom.WMCustomNativeAdapter;
+import com.windmill.sdk.natives.WMImage;
 import com.windmill.sdk.natives.WMNativeAdContainer;
 import com.windmill.sdk.natives.WMNativeAdData;
 import com.windmill.sdk.natives.WMNativeAdDataType;
@@ -317,6 +318,45 @@ public class PangleNativeAdData extends WMNativeAdData {
                     TTImage info = imageInfo.get(i);
                     if (!TextUtils.isEmpty(info.getImageUrl())) {
                         urls.add(info.getImageUrl());
+                    }
+                }
+                return urls;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public List<WMImage> getImageList() {
+        if (ttFeedAd != null) {
+            //需要自己渲染Image
+            List<TTImage> imageInfo = ttFeedAd.getImageList();
+            if (imageInfo != null && imageInfo.size() > 0) {
+                List<WMImage> urls = new ArrayList<>();
+                for (int i = 0; i < imageInfo.size(); i++) {
+                    TTImage info = imageInfo.get(i);
+                    if (info != null) {
+                        urls.add(new WMImage() {
+                            @Override
+                            public int getHeight() {
+                                return info.getHeight();
+                            }
+
+                            @Override
+                            public int getWidth() {
+                                return info.getWidth();
+                            }
+
+                            @Override
+                            public String getImageUrl() {
+                                return info.getImageUrl();
+                            }
+
+                            @Override
+                            public boolean isValid() {
+                                return info.isValid();
+                            }
+                        });
                     }
                 }
                 return urls;

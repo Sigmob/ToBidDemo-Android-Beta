@@ -17,6 +17,7 @@ import com.windmill.sdk.WindMillError;
 import com.windmill.sdk.base.WMAdapterError;
 import com.windmill.sdk.base.WMLogUtil;
 import com.windmill.sdk.custom.WMCustomNativeAdapter;
+import com.windmill.sdk.natives.WMImage;
 import com.windmill.sdk.natives.WMNativeAdContainer;
 import com.windmill.sdk.natives.WMNativeAdData;
 import com.windmill.sdk.natives.WMNativeAdDataType;
@@ -334,6 +335,11 @@ public class PangleExpressAdData extends WMNativeAdData {
 
     @Override
     public List<String> getImageUrlList() {
+        return null;
+    }
+
+    @Override
+    public List<WMImage> getImageList() {
         return null;
     }
 
