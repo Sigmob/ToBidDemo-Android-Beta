@@ -76,6 +76,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.googlecode.android-query:android-query:0.25.9'
     implementation 'androidx.cardview:cardview:1.0.0'
+//    api(name: 'oaid_sdk_1.0.25', ext: 'aar')
 
     //oppoAdn
     implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs/AdNetworks/oppoadn')
